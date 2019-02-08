@@ -82,7 +82,13 @@ function animate() {
     circle2.y = mouse.y;
     circle2.update();
 
-    console.log(getDistance(circle1.x, circle1.y, circle2.x, circle2.y));
+    if ( getDistance(circle1.x, circle1.y, circle2.x, circle2.y) < circle1.radius + circle2.radius) {
+        circle1.color = 'red';
+    } else {
+      circle1.color = 'black';
+    }
+
+    console.log( getDistance(circle1.x, circle1.y, circle2.x, circle2.y) );
 }
 
 init()
